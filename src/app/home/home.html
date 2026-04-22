@@ -4,11 +4,29 @@
 
 @for (item of produckts; track $index) {
     <div class="card" style="width: 18rem;">
-  <img src="item.images[0]" class="card-img-top" alt="...">
+  <img [src]="item.images[0]" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">{{item.description}}</h5>
-    <p class="card-text">{{item.price}}</p>
+    <p class="card-text">${{item.price.current}}</p>
     <p class="card-text">{{item.title}}</p>
+        <p class="card-text">Rating : {{item.rating}}</p>
+       <p>   
+
+        <!-- {{'⭐'.repeat(roundCeil(item.rating))}}
+        {{'☆'.repeat(5-roundCeil(item.rating))}} -->
+       
+        @for(star of [1,2,3,4,5]; track $index){
+          <svg
+               lucideStar
+                  [size]="star <= item.rating ? 23 : 20"
+                  [class.fillYel]="star <= item.rating"
+                  [class.noFill]="star > item.rating"
+                  [strokeWidth]="star <= item.rating ? 0 : 1.8"
+                  (click)="giveStar(star)"
+          ></svg>
+        }
+        
+        <!-- <i class="fa-regular fa-star"></i>   <i class="fa-solid fa-star"></i> </p> -->
     <a routerLink="/details" [queryParams]="{id :item._id}" class="btn btn-primary">See More</a>
   </div>
 </div>

@@ -1,11 +1,12 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
-import { Api } from '../api';
+import { Api } from '../services/api';
 import { Product } from '../models/product';
 import { RouterLink } from "@angular/router";
+import {LucideStar} from '@lucide/angular'
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink],
+  imports: [RouterLink, LucideStar],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
@@ -32,5 +33,13 @@ ngOnInit(){
 
 produckts: Product[]=[]
 
+roundCeil(num : number){
+    return Math.round(num)
 
+}
+
+giveStar(star : number){
+
+  console.log(star)
+}
 }

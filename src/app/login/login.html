@@ -1,1 +1,19 @@
-<p>login works!</p>
+
+
+
+
+<form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+  <input type="email" name="email" ngModel [(ngModel)]="email" email required>
+  <input type="password" name="password" ngModel [(ngModel)]="password"  required  minlength="8">
+
+   <button [disabled]="loginForm.invalid">Log In</button>
+
+</form>
+
+
+<a routerLink="/register">I dont have en account</a>
+
+<!-- {
+  email : fdgfhgjg,
+  password : dffh
+} -->

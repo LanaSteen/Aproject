@@ -1,9 +1,39 @@
 import { Component } from '@angular/core';
+import { ApiAuth } from '../services/api-auth';
+import { Router, RouterModule } from '@angular/router';
+import { Auth } from '../services/auth';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
-  imports: [],
+  imports: [FormsModule, RouterModule],
   templateUrl: './login.html',
   styleUrl: './login.scss',
 })
-export class Login {}
+export class Login {
+
+    constructor(private apiAuth : ApiAuth, private router : Router, private auth : Auth){
+
+  }
+
+
+  email = "stepacc210@gmail.com"
+  password = "Nu56t6ph5J"
+   
+
+  login(form : any){
+
+     this.apiAuth.login(form.value).subscribe({
+        next : ((resp : any) =>{
+             console.log(resp);
+             localStorage.setItem("access_token", resp.access_token)
+             localStorage.setItem("refresh_token", resp.refresh_token)
+             this.router.navigateByUrl("/home")
+             this.auth.singIn()
+
+        }),
+        error : er => alert(er.message)
+     })
+   
+  }
+}

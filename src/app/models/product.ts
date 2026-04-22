@@ -6,7 +6,7 @@ export class Product {
   description!: string;
   brand!: string;
   category!: Category;
-  images!: string[];
+  images: string[] =[];
   thumbnail!: string;
   issueDate!: Date;
   rating!: number;
@@ -14,14 +14,14 @@ export class Product {
   warranty!: number;
   price!: Price;
 
-  constructor(data?: Partial<Product>) {
-    Object.assign(this, data);
+  // constructor(data?: Partial<Product>) {
+  //   Object.assign(this, data);
 
-    // convert string -> Date
-    if (data?.issueDate) {
-      this.issueDate = new Date(data.issueDate);
-    }
-  }
+  //   // convert string -> Date
+  //   if (data?.issueDate) {
+  //     this.issueDate = new Date(data.issueDate);
+  //   }
+  // }
 }
 
 export class Category {
@@ -29,9 +29,9 @@ export class Category {
   name!: string;
   image!: string;
 
-  constructor(data?: Partial<Category>) {
-    Object.assign(this, data);
-  }
+  // constructor(data?: Partial<Category>) {
+  //   Object.assign(this, data);
+  // }
 }
 
 export class Price {
@@ -40,7 +40,7 @@ export class Price {
   currency!: string;
   discountPercentage!: number;
 
-  constructor(data?: Partial<Price>) {
-    Object.assign(this, data);
-  }
+  // constructor(data?: Partial<Price>) {
+  //   Object.assign(this, data);
+  // }
 }
