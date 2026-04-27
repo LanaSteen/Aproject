@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ApiAuth {
+
+     
      constructor(private http : HttpClient){
 
 
@@ -17,5 +19,17 @@ export class ApiAuth {
 
       register(obj : any){
          return this.http.post("https://api.everrest.educata.dev/auth/sign_up", obj)
+      }
+
+
+      getProfileInfo(id : string){
+          return this.http.get(`https://api.everrest.educata.dev/auth/id/${id}`, {
+
+             headers : {
+                  "Authorization": `Bearer ${localStorage.getItem("access_token")}`,
+
+             }
+          })
+
       }
 }

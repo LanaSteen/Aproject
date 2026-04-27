@@ -31,7 +31,7 @@ export const routes: Routes = [
 },
 {
     path : "profile",
-    loadComponent : () => import("./register/register").then(m => m.Register)
+    loadComponent : () => import("./profile/profile").then(m => m.Profile)
 
 },
 

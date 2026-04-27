@@ -46,6 +46,7 @@ export class Register {
        this.apiAuth.register(this.myRegisterForm.value).subscribe({
           next : (resp : any) =>{
                console.log(resp);
+               localStorage.setItem("userId", resp._id)
           },
 
           error : er => alert(er.message)

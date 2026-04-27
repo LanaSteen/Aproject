@@ -1,1 +1,12 @@
 <p>profile works!</p>
+
+@if(profileObj){
+ <div class="profile">
+    <img [src]="profileObj.avatar" alt="">
+    <p>{{profileObj.firstName}}</p>
+    <p>{{profileObj.lastName}}</p>
+    <p>{{profileObj.age}}</p>
+    <p>{{profileObj.phone}}</p>
+
+</div>
+}
