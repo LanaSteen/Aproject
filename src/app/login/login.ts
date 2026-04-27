@@ -3,10 +3,11 @@ import { ApiAuth } from '../services/api-auth';
 import { Router, RouterModule } from '@angular/router';
 import { Auth } from '../services/auth';
 import { FormsModule } from '@angular/forms';
+import { Fogort } from '../fogort/fogort';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule, RouterModule],
+  imports: [FormsModule, RouterModule, Fogort],
   templateUrl: './login.html',
   styleUrl: './login.scss',
 })
@@ -18,7 +19,7 @@ export class Login {
 
 
   email = "stepacc210@gmail.com"
-  password = "Nu56t6ph5J"
+  password = "Nu56t6ph5J5"
    
 
   login(form : any){
@@ -35,5 +36,9 @@ export class Login {
         error : er => alert(er.message)
      })
    
+  }
+  forgotShow = false
+  fogort(){
+   this.forgotShow = true
   }
 }

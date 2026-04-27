@@ -1,0 +1,32 @@
+<p>fogort works!</p>
+
+
+
+<h1>{{email}}</h1>
+
+
+@if(changeOrdForgot == "change"){
+  
+<form #myForm="ngForm" (ngSubmit)="changePassword(myForm.value)">
+  <input type="text" name="oldPassword" ngModel>
+  <input type="text" name="newPassword" ngModel>
+
+
+ <button>Change Password</button>
+</form>
+
+}
+@else {
+    <input type="text" placeholder="email">
+    <button (click)="sendPassword()">Send</button>
+}
+
+
+
+
+
+<!-- 
+{
+  "oldPassword": "string",
+  "newPassword": "stringst"
+} -->

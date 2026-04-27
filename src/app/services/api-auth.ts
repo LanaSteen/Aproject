@@ -32,4 +32,28 @@ export class ApiAuth {
           })
 
       }
+       getProfileInfo2(){
+          return this.http.get(`https://api.everrest.educata.dev/auth`, {
+
+             headers : {
+                  "Authorization": `Bearer ${localStorage.getItem("access_token")}`,
+
+             }
+          })
+
+      }
+
+
+      forgort(obj : any){
+         return this.http.patch("https://api.everrest.educata.dev/auth/change_password", obj,{
+
+             headers : {
+                  "Authorization": `Bearer ${localStorage.getItem("access_token")}`,
+
+             }
+          })
+
+      }
+
+      
 }

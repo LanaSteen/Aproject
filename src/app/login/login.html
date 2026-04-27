@@ -13,6 +13,13 @@
 
 <a routerLink="/register">I dont have en account</a>
 
+<button (click)="fogort()">Forgot Password</button>
+
+
+@if(forgotShow){
+   <app-fogort [email]="email" [changeOrdForgot]="'forgot'"></app-fogort>  
+}
+
 <!-- {
   email : fdgfhgjg,
   password : dffh

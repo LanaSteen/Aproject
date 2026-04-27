@@ -7,6 +7,10 @@
     <p>{{profileObj.lastName}}</p>
     <p>{{profileObj.age}}</p>
     <p>{{profileObj.phone}}</p>
+    <p>{{profileObj.email}}</p>
+
 
 </div>
 }
+
+<app-fogort [email]="profileObj.email" [changeOrdForgot]="'change'"></app-fogort>
