@@ -19,7 +19,8 @@ export class Login {
 
 
   email = "stepacc210@gmail.com"
-  password = "Nu56t6ph5J5"
+  password = "Nu56t6ph5J5"  
+  // 
    
 
   login(form : any){

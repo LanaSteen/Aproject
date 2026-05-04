@@ -17,7 +17,7 @@ export class Fogort {
 
   changePassword(data : any){
 
-     debugger
+      debugger
       this.api.forgort(data).subscribe({
 
         next : (resp : any) =>{

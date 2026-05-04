@@ -249,3 +249,13 @@
     overflow-x: auto;
   }
 }
+
+
+@media (max-width: 480px) {
+  .header-bottom{
+    flex-direction: column;
+  }
+  .bottom-nav{
+    flex-direction: column;
+  }
+}
